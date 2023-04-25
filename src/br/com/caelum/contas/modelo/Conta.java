@@ -3,7 +3,7 @@ package br.com.caelum.contas.modelo;
 
 public class Conta {
 	
-	private double saldo;
+	protected double saldo;
 	private String titular;
 	private int numero;
 	private  String agencia;
@@ -52,5 +52,10 @@ public class Conta {
 			return false;
 		}
 		
+	}
+	
+	public String getTipo()
+	{
+		return "";
 	}
 }
