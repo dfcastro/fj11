@@ -1,14 +1,12 @@
 package br.com.caelum.contas.modelo;
 
+public abstract class Conta {
 
-public class Conta {
-	
 	protected double saldo;
 	private String titular;
 	private int numero;
-	private  String agencia;
-	
-	
+	private String agencia;
+
 	public String getTitular() {
 		return titular;
 	}
@@ -33,38 +31,25 @@ public class Conta {
 		this.agencia = agencia;
 	}
 
-	public void deposita(double valor)
-	{
+	public void deposita(double valor) {
 		this.saldo += valor;
 	}
-	public double getSaldo()
-	{
+
+	public double getSaldo() {
 		return this.saldo;
 	}
-	public boolean saca(double valor)
-	{
-		if(valor<= this.saldo)
-		{
-			this.saldo -= valor;
-			return true;
-		}else
-		{
-			return false;
-		}
-	}
-	
-	public String getTipo()
-	{
-		return "";
-	}
-	
-	public boolean transfere(double valor, Conta destino)
-	{
-		if(saca(valor))
-		{
+
+	public abstract boolean saca(double valor);
+
+	public abstract String getTipo();
+
+	public boolean transfere(double valor, Conta destino) {
+		if (saca(valor)) {
 			destino.deposita(valor);
 			return true;
 		}
 		return false;
 	}
+	
+
 }

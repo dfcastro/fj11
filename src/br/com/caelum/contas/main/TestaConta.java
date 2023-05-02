@@ -6,7 +6,7 @@ public class TestaConta {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		SistemaBancario.mostraTela(false);
+		SistemaBancario.mostraTela(true);
 	}
 
 }
